@@ -1,0 +1,34 @@
+// s3Ext.idl : IDL source for s3Ext
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (s3Ext.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(6DFB23D6-095B-4A4B-B55F-87AC3745859E),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IS3ShlExt : IDispatch{
+};
+[
+	uuid(4DC322AB-BC20-4F5C-9292-D8B056A9C03B),
+	version(1.0),
+]
+library s3ExtLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(760669DD-E7AD-4ACD-B921-097B075A7711)		
+	]
+	coclass S3ShlExt
+	{
+		[default] interface IS3ShlExt;
+	};
+};
+

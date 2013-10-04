@@ -1,0 +1,52 @@
+HKCR
+{
+	SafeboxIcon.Enc.1 = s 'SafeboxIcon Enc.1 Class'
+	{
+		CLSID = s '{ABC4EA80-B324-4C84-95A7-E8FC767ED68F}'
+	}
+
+	SafeboxIcon.Enc = s 'SafeboxIcon Enc Class'
+    {
+        CLSID = s '{ABC4EA80-B324-4C84-95A7-E8FC767ED68F}'    
+		CurVer = s 'SafeboxIcon.Enc.1'
+    }
+
+	NoRemove CLSID
+	{
+		ForceRemove {ABC4EA80-B324-4C84-95A7-E8FC767ED68F} = s 'SafeboxIcon Enc Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{406E91BD-1547-426A-AFEA-53B432DDD84D}'
+			Version = s '1.0'
+		}
+	}
+}
+
+HKLM
+{
+  NoRemove SOFTWARE
+  {
+    NoRemove Microsoft
+    {
+      NoRemove Windows
+      {
+        NoRemove CurrentVersion
+        {
+          NoRemove Explorer
+          {
+            NoRemove ShellIconOverlayIdentifiers
+            {
+              ForceRemove SafeboxIcon1 = s '{ABC4EA80-B324-4C84-95A7-E8FC767ED68F}'
+              {
+              }           
+            }
+          }
+        }
+      }
+    }
+  }
+}

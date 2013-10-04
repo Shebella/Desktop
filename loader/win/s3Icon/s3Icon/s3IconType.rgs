@@ -1,0 +1,52 @@
+HKCR
+{
+	SafeboxIcon.Root.1 = s 'SafeboxIcon Root.1 Class'
+	{
+		CLSID = s '{1B649A19-7158-436C-841E-F168CB5C1456}'
+	}
+
+	SafeboxIcon.Root = s 'SafeboxIcon Root Class'
+    {
+        CLSID = s '{1B649A19-7158-436C-841E-F168CB5C1456}'    
+		CurVer = s 'SafeboxIcon.Root.1'
+    }
+
+	NoRemove CLSID
+	{
+		ForceRemove {1B649A19-7158-436C-841E-F168CB5C1456} = s 'SafeboxIcon Root Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{359A4159-B370-47A9-99C1-DE0E74F97137}'
+			Version = s '1.0'
+		}
+	}
+}
+
+HKLM
+{
+  NoRemove SOFTWARE
+  {
+    NoRemove Microsoft
+    {
+      NoRemove Windows
+      {
+        NoRemove CurrentVersion
+        {
+          NoRemove Explorer
+          {
+            NoRemove ShellIconOverlayIdentifiers
+            {
+              ForceRemove SafeboxIcon = s '{1B649A19-7158-436C-841E-F168CB5C1456}'
+              {
+              }           
+            }
+          }
+        }
+      }
+    }
+  }
+}

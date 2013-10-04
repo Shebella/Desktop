@@ -1,0 +1,1 @@
+signtool.exe sign /f "INDUSTRIAL TECHNOLOGY RESEARCH INSTITUTE .pfx" /p www.itri.org.tw %1

@@ -1,0 +1,53 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {760669DD-E7AD-4ACD-B921-097B075A7711} = s 'S3ShlExt Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+				TypeLib = s '{4DC322AB-BC20-4F5C-9292-D8B056A9C03B}'
+				Version = s '1.0'
+			}
+		}
+	}
+
+	NoRemove *
+	{
+		NoRemove ShellEx
+		{
+			NoRemove ContextMenuHandlers
+			{
+				ForceRemove S3ShlExt = s '{760669DD-E7AD-4ACD-B921-097B075A7711}'
+			}
+		}
+	}
+
+    NoRemove Directory
+    {
+        NoRemove Background
+        {
+            NoRemove ShellEx
+            {
+                NoRemove ContextMenuHandlers
+                {
+                    ForceRemove S3ShlExt = s '{760669DD-E7AD-4ACD-B921-097B075A7711}'
+                }
+            }
+        }
+    }
+
+	NoRemove Directory
+    {
+		NoRemove ShellEx
+        {
+            NoRemove ContextMenuHandlers
+            {
+                ForceRemove S3ShlExt = s '{760669DD-E7AD-4ACD-B921-097B075A7711}'
+            }
+        }
+    }
+}
+

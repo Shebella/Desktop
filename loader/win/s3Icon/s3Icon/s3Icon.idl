@@ -1,0 +1,34 @@
+// s3Icon.idl : IDL source for s3Icon
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (s3Icon.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(D80A94BC-1377-4B37-B5CA-F72D3FE9C1B1),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface Is3IconType : IDispatch{
+};
+[
+	uuid(359A4159-B370-47A9-99C1-DE0E74F97137),
+	version(1.0),
+]
+library s3IconLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(1B649A19-7158-436C-841E-F168CB5C1456)		
+	]
+	coclass s3IconType
+	{
+		[default] interface Is3IconType;
+	};
+};
+

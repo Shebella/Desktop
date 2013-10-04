@@ -1,0 +1,307 @@
+==============================================
+2012.06.07 Ben Ko & Emily Huang.
+==============================================
+Safebox v1.15
+1. [fix] start safebox failure after "Windows update" and reboot are performed.
+2. [fix] safebox doesn't start automatically after CentOS' reboot.
+3. [fix] CSS hang causes files be cleaned.
+4. [mod] retry mechanism in file transmission.
+
+==============================================
+2012.06.06 Ben Ko & Emily Huang.
+==============================================
+Safebox v1.15
+1. [fix] installer wrong title.
+2. [fix] "out of memory" at overnight test.
+3. [fix] failed object downloading might cause detetions.
+4. [fix] invalidate file list cause file clean.
+
+==============================================
+2012.05.31 Emily Huang.
+==============================================
+Safebox v1.15
+1. [mod] use callback to check state in listing.
+
+==============================================
+2012.05.29 Ben Ko & Emily Huang.
+==============================================
+Safebox v1.14
+1. [fix] lost of logging data for "DEL_OBJ" operations.
+2. [fix] cannot uninstall before newest install in Linux.
+3. [fix] cannot send log during pre-install and post-uninstall.
+4. [add] enable shell extension setup in batch file.
+
+==============================================
+2012.05.24 Emily Huang.
+==============================================
+Safebox v1.14
+1. [mod] change service configuration ip to 192.168.213.10.
+2. [mod] change icons.
+
+==============================================
+2012.05.22 Ben Ko & Emily Huang.
+==============================================
+Safebox v1.14
+1. [mod] change icons.
+2. [mod] enlarge height of folder icon in configuration dialog.
+3. [mod] flush logging for every 25 records.
+4. [add] enable jnotify for linux.
+
+==============================================
+2012.05.16 Ben Ko & Emily Huang.
+==============================================
+Safebox v1.14
+1. [fix] syncing still go on after uninstallation.
+2. [fix] ubuntu cli can't work.
+3. [fix] click of the last row in folders panel take no effect.
+4. [mod] change all icons.
+5. [mod] open sync folder by explorer if win is detected. 
+6. [mod] safebox site with better color and layout.
+7. [add] refresh folders panel for new changes within sync folder.
+8. [add] configuration dialog with image tabs.
+9. [add] reflect syncing and connection status by tray icons.
+10.[add] safebox.exe loader support "-d" option for debug.
+11.[add] installer give "checked" for shortcut options by default.
+12.[fix] installer showed "Install Finished" but there are still some errors.
+
+==============================================
+2012.05.10 Emily Huang.
+==============================================
+Safebox v1.14
+1. [mod] enlarge sensing scope of folder attributes.
+2. [mod] skip creation for photos folder if user deleted it by hiself.
+3. [mod] modify transparent icon.
+4. [add] open sync folder when shortcut is clicked and safebox has already run.
+5. [add] add wait cursor when registration.
+6. [add] disable resize of configuration dialog.
+7. [fix] fix object name decoding err about "dir%".
+8. [mod] add yield in sync thread.
+9. [mod] speed up closing of safebox.
+
+==============================================
+2012.05.08 Ben Ko & Emily Huang.
+==============================================
+Safebox v1.14
+1. [del] remove connection icon of registration dialog.
+2. [add] add safebox icon on dialog title.
+3. [add] add tool tip to when safebox starts.
+4. [mod] modify registration dialog' status background and text color.
+5. [mod] set status text to be selectable.
+6. [fix] CSS connection can not build on CentOS 64bit. 
+7. [fix] registration dialog's previous status does not imediately update when registering.
+8. [fix] sync stops when tray icon menu popups.
+9. [fix] cli error message should wait for key enter if tray icon already run.
+10. [fix] safebox still sync after uninstallation.
+11. [fix] windows loader hang on certain win7 platform.
+
+==============================================
+2012.04.27 Ben Ko & Emily Huang.
+==============================================
+Safebox v1.13
+1. [fix] winxp context menu and icon. 
+2. [fix] installer shortcut problem.
+3. [fix] linux cli can't work.
+
+==============================================
+2012.04.26 Ben Ko & Emily Huang.
+==============================================
+Safebox v1.13
+1. [add] enable installer logging to server.
+2. [add] configuration dlg accepts "enter" key to test registration.
+3. [add] win32 safebox.exe launches safebox with boudled JRE.
+4. [add] reason text on dialog to describe registration failure.
+5. [fix] linux safebox.sh can't launch safebox.
+6. [fix] configuration dlg can't be openned if previous dlg is closed by "X".
+7. [fix] first time running of configuration always write file even if user cancels the dialog.
+8. [fix] the second safebox instance appears when first time configuration is openning.
+9. [fix] folder operation of sync can't work.
+10.[fix] folder deletion of sync failed.
+11.[fix] connection text might be "unreachable" when user popups configuration dialog.
+12.[mod] modify ping function to make it more reliable.
+13.[del] diasble option panel.
+
+==============================================
+2012.04.25 Emily Huang.
+==============================================
+Safebox v1.13
+1. [fix] published ip doesn't apply to new account configuration.
+2. [fix] configuration dlg can't be openned if user close previous dlg.
+3. [mod] modify "Sync Status" to connection status.
+4. [add] check file time for local/remote file if both side have file change. 
+
+==============================================
+2012.04.20 Ben Ko & Emily Huang.
+==============================================
+Safebox v1.13
+1. [add] enable logging to db server.
+3. [add] ping network rechablity before linking to css.
+4. [fix] version check has exception when version name has 'a' character.
+5. [fix] first uploading file cause hang.
+5. [mod] each object upload/download has its own data buffer.
+6. [mod] centralize all logging into one controller.
+
+==============================================
+2012.04.13 Emily Huang.
+==============================================
+Safebox v1.12
+1. [add] periodically chk connection status & pause the sync if is disconnected.
+2. [add] new safebox version alert.
+3. [add] dir chooser for users to decide their own sync folder.
+4. [add] divide the downloading of server side list to reduce files lose. 
+5. [add] firstly get service parameters from local safebox.txt.
+6. [add] hyper link on help dialog.
+7. [add] the ping to check network before linking to CSS.
+8. [add] warning for cli non-acceptable parameters.
+9. [add] removal of local old logs.
+10.[add] counter to quick exit sync's canceling & stopping loop.
+11.[add] enhance text color and show connection status.
+12.[mod] wizard mode registration flow.
+13 [mod] change app registry value "sync path" to user's personal sync path.
+14.[mod] forcely do registration if service config change.
+15.[mod] cli do file operations while listing.
+16.[mod] cli statistics only count the successful operations. 
+17.[fix] safebox could not start if previous registration is cancelled by closing dialog.
+18.[fix] local files upload might have ping-pong effect.
+19.[fix] safebox download failure on files with special character.
+20.[fix] cli ¡¥cmp¡¦ has redundant checks.
+21.[del] cli 'cmp' remove the putting of result to public bucket.
+
+==============================================
+2012.03.25 Emily Huang.
+==============================================
+Safebox v1.11
+1. [mod] list objects by composing every listing of sub directory.
+2. [mod] move app registry values to LOCAL_MACHINE_SOFTWARE.
+3. [fix] server data parse error on safebox.txt.
+
+==============================================
+2012.03.22 Muchael Yu & Emily Huang.
+==============================================
+Safebox v1.10a
+1. [add] installer for linux.
+2. [add] enable multiple users for both windows and linux.
+3. [add] retry mechanism of listing objects procedure.
+4. [add] periodly update connection status and pause the sync if disconnected.
+5. [mod] move cfg & log files to ~/.safebox.dat/*
+6. [mod] listobject procedure skips the query of object details to improve performance.
+7. [mod] safebox read service point from safebox web, and disable editing of the field.
+8. [fix] auto sync cause files be deleted then restored.
+9. [fix] local files upload might cause ping-pong effect.
+
+==============================================
+2012.03.16 Ben Ke, Muchael Yu & Emily Huang.
+==============================================
+Safebox v1.10
+1. [add] overlay icons for sync folders.
+2. [add] display connection status in account panel.
+3. [fix] close first time registration would cause safebox always exit.
+4. [fix] loading secret key failed.
+5. [fix] installer failed if it was directly run on web page.
+6. [fix] space character contained in password cause account registration failed.
+
+==============================================
+2012.03.11 Emily Huang.
+==============================================
+Safebox v1.09
+1. [add] editor of encryption option for folders.
+2. [add] storing object base on target folder's encryption option.
+3. [del] remove jre detection in loader.
+
+==============================================
+2012.03.03 Emily Huang.
+==============================================
+Safebox v1.08
+1. [add] cli 'ls' filter out files within one layer.
+2. [add] cli 'cmp' report overall result at the end.
+3. [add] accept -info command for displying file details.
+4. [mod] modify default safebox web.
+5. [mod] prolong pooling time in sync.
+6. [fix] certain files decoded from css object have unexpected padding data.
+7. [fix] path rooted from sync folder is denied to process due to case problem.
+8. [mod] loader run safebox without console for special commands.
+9. [add] loader accept "-install" & "-uninstall" arguments for app setup.
+10.[add] shell extension dll for safebox.
+
+==============================================
+2012.02.20 Emily Huang.
+==============================================
+Safebox v1.07
+1. [add] support https connectiion to account service.
+2. [add] support console mode cfg file creation.
+3. [add] support win64 loader to launch safebox on 64bit JRE.
+4. [add] tooltips on trayicon for playing sync status.
+5. [fix] fix connect & disconnect icon doesn't shown in dialog.
+
+==============================================
+2012.02.15 Ben Ke & Emily Huang.
+==============================================
+Account service
+1. [add] initial version of account service.
+
+Safebox v1.06
+1. [mod] safebox obtain access key from account service and create cfg file at the first time running.
+2. [mod] account data editor change the accepted inputs to be ITRI ID, password and server ip.
+3. [add] safebox starts GUI first then perform connection and sync, also give connection status on tray.
+
+==============================================
+2012.02.13 Emily Huang.
+==============================================
+Safebox v1.05
+1. [mod] replace gui library.
+2. [add] config dialog for editing account data.
+3. [add] help page in dialog.
+4. [fix] deletion action does not reflect to the second end.
+5. [add] enable linux gui launch.
+
+==============================================
+2012.02.06 Emily Huang.
+==============================================
+Safebox installer
+1. [add] linux install package.
+
+Safebox v1.04
+1. [mod] modify safebox web url.
+2. [add] cli support linux platfrom.
+3. [add] safebox loader for linux user.
+4. [add] cmp's report log to CSS 'Public' bucket.
+5. [add] support "-exit" command to exit first instance.
+6. [add] support "-web" command to open safebox web page.
+
+==============================================
+2012.01.20 Ben Ko & Emily Huang.
+==============================================
+Safebox installer
+1. [add] Linux quick install package.
+2. [add] some info ing readme.txt
+
+Safebox v1.03
+1. [fix] cli function doesn't produce debug message in safebox.log.
+2. [add] cli write debug message both in detailed log and simplified log.
+3. [add] printObject() print data to file arg is assigned.
+4. [mod] cli help print.
+5. [add] cli 'auto test' function (= put + get + cmp + log).
+6. [add] cli 'put' function consider arg to create parent dir for uploading files.
+7. [add] cli 'cmp' function for folder comparison and report.
+8. [add] cli 'test' for automatically put+get+cmp an arbitrary folder.
+
+==============================================
+2012.01.13 Ben Ko & Emily Huang.
+==============================================
+Safebox installer v1.02
+1. [add] installer add shortcuts at program menu, desktop or quick launch.
+2. [add] installer add icon for shortcuts.
+3. [add] installer add removal of pre-installed files.
+4. [add] installer add release.exe in package.
+
+Safebox v1.02
+1. [add] check for connection status through all programs to protect from sw hang.
+2. [add] show connection status on tray menu.
+3. [add] add version information on tray icon tip & dialog. 
+4. [fix] cli 'get' download too many files that their prefix name just match input name.
+5. [fix] cli 'get' should put file to the current directory.
+
+==============================================
+2012.01.12 Emily Huang 
+==============================================
+Safebox v1.00
+1. initial version. 
